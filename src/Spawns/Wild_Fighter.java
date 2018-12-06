@@ -1,4 +1,8 @@
 package Spawns;
 
-public class Wild_Fighter {
+import Living_Things.Fighter;
+
+public class Wild_Fighter extends Fighter
+{
+
 }
