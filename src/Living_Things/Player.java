@@ -5,6 +5,7 @@ public class Player
     String playerName;
     public int LocX;
     public int LocY;
+    Battler[][] Party;
     public Player(String playerName, int LocX, int LocY)
     {
         this.playerName = playerName;
@@ -30,5 +31,9 @@ public class Player
     public void setLocY(int y)
     {
         this.LocY = y;
+    }
+    public void addToParty()
+    {
+
     }
 }

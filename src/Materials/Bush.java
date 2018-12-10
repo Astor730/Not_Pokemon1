@@ -1,7 +1,7 @@
 package Materials;
 
 import Living_Things.Player;
-import Living_Things.Fighter;
+import Living_Things.Battler;
 
 public class Bush
 {
