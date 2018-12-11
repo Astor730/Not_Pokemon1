@@ -19,6 +19,10 @@ public class Bush
         there = x;
         x.setLocX(this.LocX);
         x.setLocY(this.LocY);
+        if(Math.random()>5)
+        {
+
+        }
     }
     public void stepsOff(Player x)
     {
