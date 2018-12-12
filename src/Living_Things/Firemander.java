@@ -3,9 +3,9 @@ package Living_Things;
 public class Firemander extends Battler
 {
 
-    public Firemander(int health, int attack, int defense, String[] attacks)
+    public Firemander()
     {
-        super(health, attack, defense, attacks);
+        super.health = 19;
     }
     public String useStrengthen()
     {
