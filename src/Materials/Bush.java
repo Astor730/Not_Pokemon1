@@ -19,7 +19,7 @@ public class Bush
         there = x;
         x.setLocX(this.LocX);
         x.setLocY(this.LocY);
-        if(Math.random()>5)
+        if(Math.random()*10>5)
         {
 
         }
