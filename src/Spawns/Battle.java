@@ -21,18 +21,32 @@ public class Battle
             Scanner in = new Scanner(System.in);
             String input = "";
             int cpuAttack = 0;
-            System.out.println(creature.toString()+ ":" + creature.getHealth());
-            System.out.println(creature1.toString()+ ":"+ creature1.getHealth());
+            int health1 = creature.getHealth();
+            int health2 = creature1.getHealth();
+            int a = 0;
+            System.out.println(creature.toString()+ ": " + health1);
+            System.out.println(creature1.toString()+ ": "+ health2);
             System.out.println("1)"+creature.attacks[0]);
             System.out.println("2)"+creature.attacks[1]);
             input = in.nextLine();
             if(input.equalsIgnoreCase("1")|| input.equalsIgnoreCase(creature.attacks[0]))
             {
-
+                System.out.println(creature.toString()+ " used "+creature.attacks[0]);
+                creature.move1();
             }
             else if(input.equalsIgnoreCase("2)")|| input.equalsIgnoreCase(creature.attacks[1]))
             {
-
+                a = creature.move2();
+                creature1.getHit(a);
+            }
+            cpuAttack = (int) (Math.random()*2);
+            if(cpuAttack == 0)
+            {
+                creature1.move1();
+            }
+            else if(cpuAttack==1)
+            {
+                creature1.move2();
             }
         }
         if (creature1.health>0)

@@ -11,14 +11,14 @@ public class Firemander extends Battler
         super.defense = 7;
         super.attacks = new String[]{"Strengthen", "ScaleWhip"};
     }
-    public String useStrengthen()
+    public String move1()
     {
         this.attack++;
         return "Firemander used strengthen";
     }
-    public String useScaleWhip()
-    {
-        return "Firemander used Scale Whip";
+    public int move2() {
+        System.out.println("Firemander used Scale Whip");
+        return this.attack;
     }
 
     @Override
@@ -27,7 +27,9 @@ public class Firemander extends Battler
     }
 
     @Override
-    public int getHit(int a) {
+    public int getHit(int a)
+    {
+
         return 0;
     }
 

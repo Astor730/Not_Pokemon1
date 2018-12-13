@@ -11,14 +11,15 @@ public class Flourasaur extends Battler
         super.attacks = new String[]{"Heal","Slam"};
     }
 
-    public String useHeal()
+    public String move1()
     {
         this.health = health+5;
         return "Flourasaur used heal" + "\nFlourasaur's health is now " + health;
     }
-    public String useSlam()
+    public int move2()
     {
-        return "Flourasaur used slam";
+        System.out.println("Flourasaur used slam");
+        return this.attack;
     }
 
     @Override

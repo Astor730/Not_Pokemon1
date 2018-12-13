@@ -11,14 +11,15 @@ public class Splashle extends Battler
         this.attacks = new String[]{"Defend", "ShellSlam"};
     }
 
-    public String useDefend()
+    public String move1()
     {
         this.defense++;
         return"Splashle used defend";
     }
-    public String useShellSlam()
+    public int move2()
     {
-        return"Splashle used shell slam";
+        System.out.println("Splashle used shell slam");
+        return this.attack;
     }
 
     @Override

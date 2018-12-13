@@ -12,6 +12,8 @@ public abstract class Battler
     public abstract int getHealth();
     public abstract int getAttack();
     public abstract int getDefense();
+    public abstract String move1();
+    public abstract int move2();
 }
 
 
