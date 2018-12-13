@@ -32,8 +32,13 @@ public class Player
     {
         this.LocY = y;
     }
-    public void addToParty()
+    public String addToParty(Battler toAdd)
     {
+        if (Party.length<6)
+        {
 
+            return toAdd.toString() + "Was added to your party";
+        }
+        else{return "Your party is full";}
     }
 }
