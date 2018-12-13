@@ -29,8 +29,8 @@ public class Firemander extends Battler
     @Override
     public int getHit(int a)
     {
-
-        return 0;
+        int damage = (int) a/this.defense;
+        return damage;
     }
 
     @Override

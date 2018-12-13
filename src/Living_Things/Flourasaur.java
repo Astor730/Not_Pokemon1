@@ -28,8 +28,10 @@ public class Flourasaur extends Battler
     }
 
     @Override
-    public int getHit(int a) {
-        return 0;
+    public int getHit(int a)
+    {
+        int damage = (int) a/this.defense;
+        return damage;
     }
 
     @Override

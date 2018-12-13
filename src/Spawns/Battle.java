@@ -36,12 +36,14 @@ public class Battle
             }
             else if(input.equalsIgnoreCase("2)")|| input.equalsIgnoreCase(creature.attacks[1]))
             {
+                System.out.println(creature.toString()+" used "+creature.attacks[1]);
                 a = creature.move2();
-                creature1.getHit(a);
+                health1 = health1 - creature1.getHit(a);
             }
             cpuAttack = (int) (Math.random()*2);
             if(cpuAttack == 0)
             {
+                System.out.println(creature1.toString()+" used "+creature1.attacks[0]);
                 creature1.move1();
             }
             else if(cpuAttack==1)
