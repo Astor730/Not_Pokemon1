@@ -24,6 +24,7 @@ public class Bush extends Material
         x.setLocY(this.LocY);
         if(Math.random()*10>5)
         {
+            System.out.println("A wild Battler has appeared");
             new Battle(Player.CreaturetoBattle(), Splashle);
         }
     }
