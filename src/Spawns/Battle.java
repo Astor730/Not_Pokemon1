@@ -16,13 +16,13 @@ public class Battle
 
     public String battleStart()
     {
-        while (creature.health>0&&creature1.health>0)
+        int health1 = creature.getHealth();
+        int health2 = creature1.getHealth();
+        Scanner in = new Scanner(System.in);
+        while (health1>0&& health2>0)
         {
-            Scanner in = new Scanner(System.in);
             String input = "";
             int cpuAttack = 0;
-            int health1 = creature.getHealth();
-            int health2 = creature1.getHealth();
             int a = 0;
             System.out.println(creature.toString()+ ": " + health1);
             System.out.println(creature1.toString()+ ": "+ health2);
@@ -34,11 +34,11 @@ public class Battle
                 System.out.println(creature.toString()+ " used "+creature.attacks[0]);
                 creature.move1();
             }
-            else if(input.equalsIgnoreCase("2)")|| input.equalsIgnoreCase(creature.attacks[1]))
+            else if(input.equalsIgnoreCase("2")|| input.equalsIgnoreCase(creature.attacks[1]))
             {
                 System.out.println(creature.toString()+" used "+creature.attacks[1]);
                 a = creature.move2();
-                health1 = health1 - creature1.getHit(a);
+                health2 = health2 - creature1.getHit(a);
             }
             cpuAttack = (int) (Math.random()*2);
             if(cpuAttack == 0)
@@ -48,7 +48,9 @@ public class Battle
             }
             else if(cpuAttack==1)
             {
-                creature1.move2();
+                System.out.println(creature1.toString()+ " used "+creature1.attacks[1]);
+                a = creature1.move2();
+                health1 = health1 - creature.getHit(a);
             }
         }
         if (creature1.health>0)

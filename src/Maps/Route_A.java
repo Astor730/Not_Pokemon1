@@ -2,10 +2,11 @@ package Maps;
 
 import Materials.Bush;
 import Materials.Gravel;
+import Materials.Material;
 
 public class Route_A
 {
-    public Gravel[][] map;
+    public Material[][] map;
     int x;
     int y;
     public Route_A(int x, int y)

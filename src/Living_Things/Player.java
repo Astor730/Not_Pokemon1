@@ -1,11 +1,16 @@
 package Living_Things;
 
+import Living_Things.Battler;
+import Living_Things.Firemander;
+
 public class Player
 {
-    String playerName;
+    private Battler starter;
+    private String playerName;
     public int LocX;
     public int LocY;
-    Battler[][] Party;
+    private static Battler Firemander;
+    public static Battler[] Party = {Firemander};
     public Player(String playerName, int LocX, int LocY)
     {
         this.playerName = playerName;
@@ -40,5 +45,9 @@ public class Player
             return toAdd.toString() + "Was added to your party";
         }
         else{return "Your party is full";}
+    }
+    public static Battler CreaturetoBattle()
+    {
+        return Party[0];
     }
 }

@@ -2,7 +2,7 @@ package Materials;
 
 import Living_Things.Player;
 
-public class Gravel
+public class Gravel extends Material
 {
     Player there;
     int LocX,LocY;
