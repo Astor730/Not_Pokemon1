@@ -8,13 +8,10 @@ import Living_Things.Splashle;
 import Spawns.Battle;
 
 public class Game
-
 {
-    private static Battler Splashle ;
-    private static Battler Firemander;
-
+    private static boolean gameOn = true;
     public static void main(String[] args)
     {
-        new Battle(Firemander,Splashle);
+
     }
 }
