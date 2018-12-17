@@ -22,6 +22,7 @@ public class Bush extends Material
         LocY = y;
     }
 
+    @Override
     public void stepsOn(Player x)
     {
         there = x;
@@ -50,6 +51,7 @@ public class Bush extends Material
             System.out.println("You are in a bush");
         }
     }
+    @Override
     public void stepsOff(Player x)
     {
         there = null;

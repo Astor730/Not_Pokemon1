@@ -10,7 +10,7 @@ public class Player
     public int LocX;
     public int LocY;
     private static Battler Firemander;
-    public static Battler[] Party = {Firemander};
+    public static Battler[] Party;
     public Player(String playerName, int LocX, int LocY)
     {
         this.playerName = playerName;
@@ -41,7 +41,7 @@ public class Player
     {
         if (Party.length<6)
         {
-
+            Party[0] = toAdd;
             return toAdd.toString() + "Was added to your party";
         }
         else{return "Your party is full";}
