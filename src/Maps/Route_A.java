@@ -9,9 +9,9 @@ public class Route_A
     public Material[][] map;
     int x = 15;
     int y = 30;
-    public Route_A()
+    public Route_A(Material[][] map)
     {
-        this.map = new Material[x][y];
+        this.map = map;
     }
     public void makeRoute()
     {

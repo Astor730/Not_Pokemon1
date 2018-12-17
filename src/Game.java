@@ -18,18 +18,25 @@ public class Game
         Scanner in = new Scanner(System.in);
         System.out.println("Hello, hello, is this thing on?.\nYou should be able to hear me.");
         System.out.println("Listen I don't have much time but you need to get up.");
-        System.out.println("Do you remember your name?");
+        System.out.println("Do you remember your name? Tell me your name so I can make sure.");
         String name = in.nextLine();
-        System.out.println("Ok good.\nThere should be three battlers near you, find them and start moving");
-        System.out.println("Make your way south.\n Hurry I'll explain everything when you get here");
+        System.out.println("Ok good.\nThere should be three battlers near you, find them and start moving.");
+        System.out.println("Make your way south.\n Hurry, I'll explain everything when you get here.");
         Player player1 = new Player(name,0,0);
 
+        Material[][] map1= new Material[15][30];
+        Town_1 town1 = new Town_1(map1);
+        town1.makeMap(15,30);
+        map1[0][0].stepsOn(player1);
+        Material[][] map2=new Material[0][0];
+        Route_A route_a = new Route_A(map2);
+        route_a.makeRoute();
         while (gameOn)
         {
-
+            town1.print();
             System.out.println("Where would you like to move?(Choose N,S,E,W)");
             String move = in.nextLine();
-            if validMove(move,player1,Material[][] map)
+            if (validMove(move,player1,map1))
             {
 
             }
