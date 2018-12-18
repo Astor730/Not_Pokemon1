@@ -15,7 +15,13 @@ public class Town_1
    }
    public void makeMap(int x,int y)
    {
-      map = new Gravel[x][y];
+      for(int i = 0; i<map.length;i++)
+      {
+         for(int z = 0; z<map[i].length;z++)
+         {
+            map[i][z] = new Gravel(i,z);
+         }
+      }
    }
    public void print()
    {
