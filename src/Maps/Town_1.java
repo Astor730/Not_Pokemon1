@@ -5,17 +5,19 @@ import Materials.Material;
 public class Town_1
 {
    Material[][] map;
+   int x = 15;
+   int y = 30;
    public Town_1(Material[][] map)
    {
        this.map = map;
    }
    public Town_1(int x, int y)
    {
-      this.makeMap(x,y);
+      this.makeMap();
    }
-   public void makeMap(int x,int y)
+   public void makeMap()
    {
-      map = new Gravel[x][y];
+      map = new Gravel[this.x][this.y];
    }
    public void print()
    {
