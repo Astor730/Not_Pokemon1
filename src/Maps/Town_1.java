@@ -33,9 +33,17 @@ public class Town_1
          row = "";
          for(int z =0; z<map[i].length;z++)
          {
-            row = row + map[i][z].toString();
+             if(map[i][z] == null)
+             {
+                 row = row+ map[i][z].toString();
+             }
+             else
+             {
+                 row = row+"["+map[i][z].getName()+"]";
+             }
          }
          System.out.println(row);
       }
    }
+
 }

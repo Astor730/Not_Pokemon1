@@ -5,12 +5,12 @@ import Living_Things.Firemander;
 
 public class Player
 {
-    private Battler starter;
     private String playerName;
     public int LocX;
     public int LocY;
-    private static Battler Firemander;
     public static Battler[] Party;
+    private Battler Firemander;
+
     public Player(String playerName, int LocX, int LocY)
     {
         this.playerName = playerName;
@@ -36,6 +36,10 @@ public class Player
     public void setLocY(int y)
     {
         this.LocY = y;
+    }
+    public void inizializeParty()
+    {
+        Party [0] = Firemander;
     }
     public String addToParty(Battler toAdd)
     {

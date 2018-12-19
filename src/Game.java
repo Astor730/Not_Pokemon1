@@ -7,6 +7,7 @@ import Materials.Gravel;
 import Materials.Material;
 import Materials.Bush;
 import Spawns.Battle;
+import Living_Things.Player;
 
 public class Game
 {
@@ -33,7 +34,7 @@ public class Game
         Town_1 town1 = new Town_1(map1);
         town1.makeMap();
         map1[0][0].stepsOn(player1);
-        Material[][] map2=new Material[0][0];
+        Material[][] map2=new Material[15][30];
         Route_A route_a = new Route_A(map2);
         route_a.makeRoute();
         while (gameOn)
@@ -45,7 +46,7 @@ public class Game
             {
                 town1.print();
             }
-            if(player1.Party.length<1)
+            if(player1.Party.length<2)
             {
                 if(player1.getLocY()>12&&player1.getLocY()<18&&player1.getLocX()>8&& player1.getLocX()<12 && inTown1)
                 {

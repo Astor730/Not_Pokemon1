@@ -25,7 +25,7 @@ public class Gravel extends Material
     }
     public String toString()
     {
-        return "";
+        return "[ ]";
     }
     public String getName()
     {
