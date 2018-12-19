@@ -8,7 +8,7 @@ public class Player
     private String playerName;
     public int LocX;
     public int LocY;
-    public static Battler[] Party;
+    public static Battler[] Party = {null};
     private Battler Firemander;
 
     public Player(String playerName, int LocX, int LocY)

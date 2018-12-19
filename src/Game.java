@@ -29,6 +29,7 @@ public class Game
         System.out.println("Ok good, "+name+"."+"\nThere should be three battlers near you, find them and start moving.");
         System.out.println("Make your way south.\nHurry, I'll explain everything when you get here.");
         Player player1 = new Player(name,0,0);
+        player1.inizializeParty();
 
         Material[][] map1= new Material[15][30];
         Town_1 town1 = new Town_1(map1);
@@ -42,38 +43,48 @@ public class Game
             town1.print();
             System.out.println("Where would you like to move?(Choose N,S,E,W)");
             String move = in.nextLine();
-            if (validMove(move,player1,map1)&& inTown1)
+            if (inTown1)
             {
-                town1.print();
-            }
-            if(player1.Party.length<2)
-            {
-                if(player1.getLocY()>12&&player1.getLocY()<18&&player1.getLocX()>8&& player1.getLocX()<12 && inTown1)
+                if(validMove(move,player1,map1))
                 {
-                    System.out.println("You've stumbled across the Battlers that the mystery man was talking about");
-                    System.out.println("Would you like the flower dinosaur, 1)Flourasaur,");
-                    System.out.println("The flame salamander, 2)Firemander, or the water turtle, 3)Splashle?");
-                    while(player1.Party.length<1) {
-                        move = in.nextLine();
-                        if (move.equalsIgnoreCase("flourasaur") || move.equalsIgnoreCase("1")) {
-                            player1.addToParty(Flourasaur);
-                        } else if (move.equalsIgnoreCase("firemander") || move.equalsIgnoreCase("2")) {
-                            player1.addToParty(Firemander);
-                        } else if (move.equalsIgnoreCase("splashle") || move.equalsIgnoreCase("3")) {
-                            player1.addToParty(Splashle);
-                        } else {
-                            System.out.println("That's not a choice, try again");
+                    town1.print();
+                    if(player1.Party.length<2)
+                    {
+                        if(player1.getLocY()>12&&player1.getLocY()<18&&player1.getLocX()>8&& player1.getLocX()<12)
+                        {
+                            System.out.println("You've stumbled across the Battlers that the mystery man was talking about");
+                            System.out.println("Would you like the flower dinosaur, 1)Flourasaur,");
+                            System.out.println("The flame salamander, 2)Firemander, or the water turtle, 3)Splashle?");
+                            while(player1.Party.length<2) {
+                                move = in.nextLine();
+                                if (move.equalsIgnoreCase("flourasaur") || move.equalsIgnoreCase("1")) {
+                                    player1.addToParty(Flourasaur);
+                                } else if (move.equalsIgnoreCase("firemander") || move.equalsIgnoreCase("2")) {
+                                    player1.addToParty(Firemander);
+                                } else if (move.equalsIgnoreCase("splashle") || move.equalsIgnoreCase("3")) {
+                                    player1.addToParty(Splashle);
+                                } else {
+                                    System.out.println("That's not a choice, try again");
+                                }
+                            }
                         }
                     }
                 }
+                else
+                {
+                    System.out.println("That's not a valid move try again");
+                }
             }
-            if (validMove(move,player1,map2)&& inRouteA)
+
+            if (inRouteA== true)
             {
-                route_a.print();
-            }
-            else
-            {
-                System.out.println("That's not a valid move try again.");
+                if(validMove(move,player1,map2)) {
+                    route_a.print();
+                }
+                else
+                {
+                    System.out.println("That's not a valid move try again.");
+                }
             }
         }
     }
