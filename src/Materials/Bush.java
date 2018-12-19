@@ -56,4 +56,20 @@ public class Bush extends Material
     {
         there = null;
     }
+    public String getString()
+    {
+        return "";
+    }
+    public String getName()
+    {
+        String name = "";
+        if(there == null)
+        {
+            return name;
+        }
+        else
+        {
+            return "X";
+        }
+    }
 }

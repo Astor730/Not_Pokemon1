@@ -23,4 +23,21 @@ public class Gravel extends Material
     {
         there = null;
     }
+    public String toString()
+    {
+        return "";
+    }
+    public String getName()
+    {
+        String name = "";
+        if (there == null)
+        {
+            return name;
+        }
+        else
+        {
+            return "X";
+        }
+    }
+
 }
