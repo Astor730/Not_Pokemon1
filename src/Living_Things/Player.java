@@ -8,8 +8,7 @@ public class Player
     private String playerName;
     public int LocX;
     public int LocY;
-    public static Battler[] Party = {null};
-    private Battler Firemander;
+    public static Battler[] Party;
 
     public Player(String playerName, int LocX, int LocY)
     {
@@ -39,7 +38,7 @@ public class Player
     }
     public void inizializeParty()
     {
-        Party [0] = Firemander;
+        Party = new Battler[1];
     }
     public String addToParty(Battler toAdd)
     {

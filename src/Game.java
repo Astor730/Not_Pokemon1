@@ -20,7 +20,42 @@ public class Game
 
     public static void main(String[] args)
     {
+        Flourasaur = new Battler() {
+            @Override
+            public String showSummary() {
+                return null;
+            }
 
+            @Override
+            public int getHit(int a) {
+                return 0;
+            }
+
+            @Override
+            public int getHealth() {
+                return 0;
+            }
+
+            @Override
+            public int getAttack() {
+                return 0;
+            }
+
+            @Override
+            public int getDefense() {
+                return 0;
+            }
+
+            @Override
+            public String move1() {
+                return null;
+            }
+
+            @Override
+            public int move2() {
+                return 0;
+            }
+        };
         Scanner in = new Scanner(System.in);
         System.out.println("Hello, hello, is this thing on?.\nYou should be able to hear me.");
         System.out.println("Listen I don't have much time but you need to get up.");
@@ -48,14 +83,14 @@ public class Game
                 if(validMove(move,player1,map1))
                 {
                     town1.print();
-                    if(player1.Party.length<2)
+                    if(player1.Party.length<1)
                     {
                         if(player1.getLocY()>12&&player1.getLocY()<18&&player1.getLocX()>8&& player1.getLocX()<12)
                         {
                             System.out.println("You've stumbled across the Battlers that the mystery man was talking about");
                             System.out.println("Would you like the flower dinosaur, 1)Flourasaur,");
                             System.out.println("The flame salamander, 2)Firemander, or the water turtle, 3)Splashle?");
-                            while(player1.Party.length<2) {
+                            while(player1.Party.length<1) {
                                 move = in.nextLine();
                                 if (move.equalsIgnoreCase("flourasaur") || move.equalsIgnoreCase("1")) {
                                     player1.addToParty(Flourasaur);
@@ -75,6 +110,7 @@ public class Game
                     System.out.println("That's not a valid move try again");
                 }
             }
+
 
             if (inRouteA== true)
             {
@@ -128,6 +164,7 @@ public class Game
                 {
                     inTown1 = false;
                     inRouteA = true;
+
                     return false;
                 }
                 else
